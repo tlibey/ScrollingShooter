@@ -63,6 +63,13 @@ void drawObjects(drawableObject d1)
    stroke(c);
    rect(x,y,w,h); 
   }
+  else if(type == "boss")
+  {
+   fill(c);
+   stroke(c);
+   rect(x,y,w,h);
+  println("test"); 
+  }
    
    
   

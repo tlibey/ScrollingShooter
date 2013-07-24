@@ -19,14 +19,6 @@ boolean checkCollision(drawableObject d1, drawableObject d2)
      
    return true;
    
-   
-   
-   /*
-    if(d1.xPos > d2.xPos && d1.xPos < d2.xPos+d2.oWidth && d1.yPos > d2.yPos && d1.yPos< d2.yPos+d2.oHeight)
-     { return true;}
-     else
-     return false;
-  */
 }
 
 void checkHitsAndPickups(Enemies ens, Player pl)
@@ -40,8 +32,15 @@ void checkHitsAndPickups(Enemies ens, Player pl)
                {
                  String[] loots = {"health","bomb"};
                  String thisLoot =  loots[(int)random(0,2)] ;
-                 println(thisLoot);
                  ens.eLoot.add(new Loot(thisLoot,en.ebody.xPos,en.ebody.yPos));
+                 if(en.ebody.type == "boss")
+                 {
+                  pl.score = pl.score +100; 
+                 }
+                 else
+                 {
+                  pl.score = pl.score + 10; 
+                 }
                  ens.enemies.remove(jj); 
                }
               if(checkPlayerHit(en,pl))

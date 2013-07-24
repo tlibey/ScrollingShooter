@@ -99,6 +99,15 @@ class Enemies
       }
   }
   
+  void addBoss()
+  {
+   enemies.add(new Enemy(width-60,groundLevel-40,0,0,40,40,0,50));
+   Enemy boss = enemies.get(enemies.size()-1);
+   boss.eWeapon.ammoLim = 20;
+   boss.eWeapon.yPos = 20;
+   boss.ebody.type = "boss";
+    
+  }
 }
 
 class Boss extends Enemy
