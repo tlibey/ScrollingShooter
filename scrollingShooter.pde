@@ -74,12 +74,32 @@ void playerMenu(Player pl)
    inGame = true;
    inPlayerMenu = false; 
   }
-  background(0);
-  fill(255);
+  background(255);
+  fill(0);
   bg1.updateBackground();
   textFont(font,30);
   text("PlayerMenu",width/2-100,30);
   text("press ENTER to return to game",width/2-100,150);
+  
+  //health buttons
+  fill(240,203,30);
+  rect(30,30,30,30);
+  fill(255,125,0);
+  rect(40,35,10,20);
+  rect(35,40,20,10);
+  if(mouseX > 30 & mouseX <60 & mouseY>30 & mouseY <60)
+    if(mousePressed)
+      {
+       pl.maxHits = pl.maxHits +25; 
+       delay(100);
+      }
+ 
+  fill(0);
+  textFont(font,10);
+  text("Health",30,20);
+  text(pl.maxHits,30,30);
+    
+  
   
 }
 
